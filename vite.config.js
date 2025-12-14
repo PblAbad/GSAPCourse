@@ -9,10 +9,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  resolve: {
-    alias: {
-      'react': path.resolve('./node_modules/react')
-    }
-  },
   base: '/GSAPCourse/'
 })
