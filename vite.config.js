@@ -13,5 +13,6 @@ export default defineConfig({
     alias: {
       'react': path.resolve('./node_modules/react')
     }
-  }
+  },
+  base: '/GSAPCourse'
 })
