@@ -18,7 +18,7 @@ const Cocktails = () => {
                 y: 100,
                 x: -100
             })
-            .from('#c-right-leaf"', {
+            .from('#c-right-leaf', {
                 y: 100,
                 x: 100
             })
