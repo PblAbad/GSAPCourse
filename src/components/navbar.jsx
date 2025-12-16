@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { navLinks } from "../../constants";
+import logo from '../assets/logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,24 +29,24 @@ const Navbar = () => {
     );
   }, []);
 
-  return (
-    <nav>
-      <div>
-        <a href="#home" className="flex items-center gap-2">
-          <img src="/images/logo.png" alt="logo" />
-          <p>Velvet Pour</p>
-        </a>
+    return (
+        <nav>
+            <div>
+                <a href="#home" className="flex items-center gap-2">
+                    <img src={logo} alt="logo" />
+                    <p>Velvet Pour</p>
+                </a>
 
-        <ul>
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
-  );
+                <ul>
+                    {navLinks.map((link) => (
+                        <li key={link.id}>
+                            <a href={`#${link.id}`}>{link.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

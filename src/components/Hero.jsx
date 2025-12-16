@@ -4,6 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import {useMediaQuery} from "react-responsive";
+import heroLeft from '../assets/hero-left-leaf.png';
+import heroRight from '../assets/hero-right-leaf.png';
+import videoFile from '../assets/output.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,40 +67,40 @@ const Hero = () => {
         };
 
     }, [])
-  return (
-    <>
-    <section id="hero" className="noisy">
-        <h1 className="title">MOJITOS</h1>
-        <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf"/>
-        <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf"/>
-        <div className="body">
-            <div className="content">
-                <div className="space-y-5 hidden md:block">
-                    <p>Refrescante. Clásico</p>
-                    <p className="subtitle">
-                        Disfruta el Espíritu <br/> del Verano
-                    </p>
+    return (
+        <>
+            <section id="hero" className="noisy">
+                <h1 className="title">MOJITOS</h1>
+                <img src={heroLeft} alt="left-leaf" className="left-leaf"/>
+                <img src={heroRight} alt="right-leaf" className="right-leaf"/>
+                <div className="body">
+                    <div className="content">
+                        <div className="space-y-5 hidden md:block">
+                            <p>Refrescante. Clásico</p>
+                            <p className="subtitle">
+                                Disfruta el Espíritu <br/> del Verano
+                            </p>
+                        </div>
+                        <div className="view-cocktails">
+                            <p className="subtitle">
+                                Nuestros cóckteles tienen ingredientes premium, creativos y con la mayor calidad para que tus papilas gustativas disfruten al máximo.
+                            </p>
+                            <a href="#cocktails">Ver Cóckteles</a>
+                        </div>
+                    </div>
                 </div>
-            <div className="view-cocktails">
-                <p className="subtitle">
-                    Nuestros cóckteles tienen ingredientes premium, creativos y con la mayor calidad para que tus papilas gustativas disfruten al máximo.
-                </p>
-                <a href="#cocktails">Ver Cóckteles</a>
+            </section>
+            <div className="video absolute inset-0">
+                <video
+                    ref={videoRef}
+                    src={videoFile}
+                    muted
+                    playsInline
+                    preload="auto"
+                />
             </div>
-            </div>
-        </div>
-    </section>
-    <div className="video absolute inset-0">
-        <video
-            ref={videoRef}
-            src="/videos/output.mp4"
-            muted
-            playsInline
-            preload="auto"
-        />
-    </div>
-    </>
-  )
+        </>
+    );
 };
 
 export default Hero;
